@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def serve():
     if request.method == 'POST':
-        subprocess.Popen('python3 stress_cpu.py')
+        subprocess.Popen(['python3', 'stress_cpu.py'])
         return str('running stress')
 
     elif request.method == 'GET':
